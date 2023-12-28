@@ -1,5 +1,6 @@
 package com.jamal.composeprefssample
 
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -7,6 +8,7 @@ import androidx.compose.material.icons.filled.Info
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.ExperimentalComposeUiApi
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
@@ -18,9 +20,8 @@ import com.jamal.composeprefs.ui.prefs.*
 @ExperimentalComposeUiApi
 @Composable
 fun SettingsScreen() {
-    Scaffold(topBar = { SettingsTopBar() }) {
-
-        PrefsScreen(dataStore = LocalContext.current.dataStore) {
+    Scaffold(topBar = { SettingsTopBar() }) { padding ->
+        PrefsScreen(dataStore = LocalContext.current.dataStore,Modifier.padding(padding)) {
 
             prefsGroup({
                 GroupHeader(
